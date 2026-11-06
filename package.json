@@ -57,5 +57,18 @@
   },
   "allowScripts": {
     "esbuild@0.17.18": true
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(ts|tsx|js|jsx)$": [
+        "ts-jest",
+        {
+          "tsconfig": "tsconfig.jest.json",
+          "isolatedModules": true
+        }
+      ],
+      "^.+\\.(svg|jpg|jpeg|png)$": "<rootDir>/svgTransform.cjs"
+    }
   }
 }
